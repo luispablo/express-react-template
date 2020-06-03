@@ -1,0 +1,24 @@
+{
+  "auth": {
+    "mockUsers": [{ "username": "test", "password": "test", "groups": ["general"] }],
+    "token": {
+      "secret": "WFXLfP1TTJU6zGMXBt7e69JFbQ4yrrsM7tk286m2I5YYOTfb528vEOD2NDYbS818",
+      "validDays": 90
+    },
+    "staticKeys": {},
+    "roles": {
+      "admin": { "groups": ["general"] }
+    }
+  },
+  "clientRouterHack": true,
+  "multilog": [{ "name": "console", "level": "DEBUG" }],
+  "knex": {
+    "client": "sqlite3",
+    "useNullAsDefault": true,
+    "connection": { "filename": "db/appname_dev.sqlite3" },
+    "migrations": {
+      "tableName": "migrations"
+    }
+  }
+}
+

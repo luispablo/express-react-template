@@ -1,0 +1,36 @@
+{
+  "name": "express-react-template",
+  "version": "0.0.1",
+  "description": "Your app name",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -t babelify app/client.js -o public/js/appname-$npm_package_version.bundle.min.js",
+    "build-prod": "browserify -g uglifyify -t babelify app/client.js --minify -o public/js/appname-$npm_package_version.bundle.min.js",
+    "watch": "watchify -t babelify app/client.js -o public/js/appname-$npm_package_version.bundle.min.js -dv",
+    "lint": "./node_modules/.bin/eslint *.js app/*.js app/**/*.js app/**/**/*.js",
+    "test": "knex migrate:latest --env=ut; ava --serial; git checkout -- db/appname_ut.sqlite3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "URL"
+  },
+  "keywords": [
+  ],
+  "author": "@luispablo",
+  "license": "GPL-3.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "browserify-versionify"
+    ]
+  }
+}
